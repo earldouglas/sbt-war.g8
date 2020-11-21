@@ -1,3 +1,3 @@
-scalaVersion := "2.12.11"
+scalaVersion := "2.13.4"
 libraryDependencies += "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided"
 enablePlugins(JettyPlugin)
