@@ -1,3 +1,5 @@
+package http
+
 import java.net._
 import scala.collection.JavaConverters._
 import scala.io.Source
@@ -8,14 +10,14 @@ case class Response(
   body: String
 )
 
-object Request {
+object Request:
 
   def apply(
     method: String,
     url: String,
     headers: Map[String, String],
     body: Option[String]
-  ): Response = {
+  ): Response =
 
     val c =
       new URL(url)
@@ -44,15 +46,14 @@ object Request {
             .asScala
             .filter({ case (k, _) => k != null })
             .map({ case (k, v) => (k, v.asScala.mkString(",")) })
-            .toMap - "Date" - "Content-Length" - "Server",
+            .toMap - "Keep-Alive" - "Connection" - "Date" - "Content-Length",
         body =
           Source
             .fromInputStream {
-              if (c.getResponseCode() < 400) {
+              if (c.getResponseCode() < 400)
                 c.getInputStream
-              } else {
+              else
                 c.getErrorStream
-              }
             }
             .mkString
       )
@@ -60,5 +61,3 @@ object Request {
     c.disconnect()
 
     response
-  }
-}

@@ -1,13 +1,17 @@
+package mypackage
+
+import http.Request
+import http.Response
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class TestSuite {
+class MyServletSuite:
 
   @Test
-  def getRoot(): Unit = {
+  def getRoot(): Unit =
     assertEquals(
         Response( 200
-                , Map("Content-Type" -> "text/html;charset=utf-8")
+                , Map("Content-Type" -> "text/html;charset=UTF-8")
                 , body = 
                     """|<html>
                        |  <body>
@@ -15,7 +19,5 @@ class TestSuite {
                        |  </body>
                        |</html>""".stripMargin
                 )
-      , Request("GET", "http://localhost:8080/", Map.empty, None) 
+      , Request("GET", "http://localhost:8080/hello", Map.empty, None) 
     )
-  }
-}
