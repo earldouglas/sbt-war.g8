@@ -1,1 +1,2 @@
+> scalafmtCheckAll
 > tomcat:test
