@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServletResponse
 
 @WebServlet(urlPatterns = Array("/hello"))
 class Servlet extends HttpServlet:
-  override def doGet(req: HttpServletRequest, res: HttpServletResponse): Unit =
+  override def doGet(
+      req: HttpServletRequest,
+      res: HttpServletResponse
+  ): Unit =
     res.setContentType("text/html")
     res.setCharacterEncoding("UTF-8")
     val responseBody: String =
