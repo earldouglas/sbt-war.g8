@@ -5,7 +5,7 @@ lazy val root = (project in file("."))
   .enablePlugins(ScriptedPlugin)
   .settings(
     name := "xsbt-web-plugin Template Project",
-    scalaVersion := "2.12.16",
+    scalaVersion := "2.12.17",
     Test / test := {
       val _ = (Test / g8Test).toTask("").value
     },
