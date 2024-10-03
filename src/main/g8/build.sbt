@@ -1,4 +1,4 @@
 scalaVersion := "3.1.0"
-libraryDependencies += "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided"
+libraryDependencies += "jakarta.servlet" % "jakarta.servlet-api" % "6.0.0" % Provided
 libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
-enablePlugins(TomcatPlugin)
+enablePlugins(SbtWar)
