@@ -1,4 +1,4 @@
-![Build Status](https://github.com/earldouglas/xsbt-web-plugin.g8/workflows/build/badge.svg)
+![Build Status](https://github.com/earldouglas/sbt-war.g8/workflows/build/badge.svg)
 
 This is a [Giter8][g8] template for [sbt-war].
 
@@ -8,5 +8,5 @@ This is a [Giter8][g8] template for [sbt-war].
 ## Usage
 
 ```
-sbt new earldouglas/xsbt-web-plugin.g8
+sbt new earldouglas/sbt-war.g8
 ```
