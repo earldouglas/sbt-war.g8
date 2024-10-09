@@ -1,4 +1,9 @@
 > scalafmtCheckAll
+
 > warStart
 > test
 > warStop
+
+> webappStart
+> test
+> webappStop
