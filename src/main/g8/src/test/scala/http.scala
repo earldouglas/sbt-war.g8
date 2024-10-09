@@ -12,15 +12,42 @@ case class Response(
 
 object Request:
 
+  private def isOpen(port: Int): Boolean =
+    try {
+      import java.net.Socket
+      import java.net.InetSocketAddress
+      val socket: Socket = new Socket()
+      socket.connect(new InetSocketAddress("localhost", port))
+      socket.close()
+      true
+    } catch {
+      case e: Exception => false
+    }
+
+  private def awaitOpen(port: Int, retries: Int): Unit =
+    if (!isOpen(port)) {
+      if (retries > 0) {
+        Thread.sleep(100)
+        awaitOpen(port, retries - 1)
+      } else {
+        throw new Exception(s"expected port $port to be open")
+      }
+    }
+
   def apply(
       method: String,
-      url: String,
+      urlString: String,
       headers: Map[String, String],
       body: Option[String]
   ): Response =
 
+    val url: URL =
+      new URL(urlString)
+
+    awaitOpen(url.getPort(), 50)
+
     val c =
-      new URL(url)
+      url
         .openConnection()
         .asInstanceOf[HttpURLConnection]
 
