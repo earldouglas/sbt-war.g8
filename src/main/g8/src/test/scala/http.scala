@@ -30,7 +30,7 @@ object Request:
         Thread.sleep(100)
         awaitOpen(port, retries - 1)
       } else {
-        throw new Exception(s"expected port $port to be open")
+        throw new Exception("port" + port + " should be open")
       }
     }
 
