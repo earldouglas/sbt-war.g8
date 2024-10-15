@@ -4,6 +4,6 @@
 > test
 > warStop
 
-> webappStart
+> warQuickstart
 > test
-> webappStop
+> warStop
