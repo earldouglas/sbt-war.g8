@@ -1,9 +1,9 @@
 > scalafmtCheckAll
 
-> warStart
+> warStartPackage
 > test
 > warStop
 
-> warQuickstart
+> warStart
 > test
 > warStop
