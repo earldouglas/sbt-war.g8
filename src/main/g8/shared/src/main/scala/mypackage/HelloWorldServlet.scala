@@ -5,8 +5,8 @@ import jakarta.servlet.http.HttpServlet
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 
-@WebServlet(urlPatterns = Array("/hello"))
-class Servlet extends HttpServlet:
+@WebServlet(urlPatterns = Array("/hello.html"))
+class HelloWorldServlet extends HttpServlet:
   override def doGet(
       req: HttpServletRequest,
       res: HttpServletResponse
