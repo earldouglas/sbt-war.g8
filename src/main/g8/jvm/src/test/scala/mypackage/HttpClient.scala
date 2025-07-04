@@ -1,4 +1,4 @@
-package http
+package mypackage
 
 import java.net._
 import scala.collection.JavaConverters._
