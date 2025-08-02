@@ -9,6 +9,9 @@ lazy val root =
     .enablePlugins(SbtWar)
     .settings(
       libraryDependencies += "com.lihaoyi" %%% "upickle" % "4.1.0",
+      warResources := warResources.value ++ crossProjectBaseDirectory
+        .map(_ / "webapp")
+        .map(com.earldouglas.sbt.war.WebappComponents.getResources).value,
     )
     .jvmSettings(
       libraryDependencies += "jakarta.servlet" % "jakarta.servlet-api" % "6.0.0" % Provided,
