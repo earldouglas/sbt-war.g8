@@ -1,5 +1,3 @@
-> scalafmtCheckAll
-
 > warStartPackage
 > test
 > warStop
