@@ -1,7 +1,7 @@
 > warStartPackage
-> test
+> testFull
 > warStop
 
 > warStart
-> test
+> testFull
 > warStop
