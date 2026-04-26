@@ -1,1 +1,1 @@
-addSbtPlugin("com.earldouglas" % "sbt-war" % "5.1.2")
+addSbtPlugin("com.earldouglas" % "sbt-war" % "5.2.0")
