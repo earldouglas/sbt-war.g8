@@ -1,2 +1,2 @@
 name := "sbt-war Template Project"
-scalaVersion := "3.8.2"
+scalaVersion := "3.8.3"
